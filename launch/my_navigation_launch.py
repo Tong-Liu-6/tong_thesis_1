@@ -12,7 +12,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     # Get the launch directory
-    bringup_dir = get_package_share_directory('my_nav2')
+    bringup_dir = get_package_share_directory('tong_thesis_1')
     launch_dir = os.path.join(bringup_dir, 'launch')
 
     # Create the launch configuration variables

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(my_nav2)
+project(tong_thesis_1)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -26,33 +26,33 @@ ament_package()
 
 install(
   DIRECTORY launch
-  DESTINATION share/my_nav2/
+  DESTINATION share/tong_thesis_1/
 )
 install(
   DIRECTORY maps
-  DESTINATION share/my_nav2/
+  DESTINATION share/tong_thesis_1/
 )
 install(
   DIRECTORY params
-  DESTINATION share/my_nav2/
+  DESTINATION share/tong_thesis_1/
 )
 install(
   DIRECTORY rviz
-  DESTINATION share/my_nav2/
+  DESTINATION share/tong_thesis_1/
 )
 install(
   DIRECTORY urdf
-  DESTINATION share/my_nav2/
+  DESTINATION share/tong_thesis_1/
 )
 install(
   DIRECTORY worlds
-  DESTINATION share/my_nav2/
+  DESTINATION share/tong_thesis_1/
 )
 install(
   DIRECTORY bags
-  DESTINATION share/my_nav2/
+  DESTINATION share/tong_thesis_1/
 )
 install(
   DIRECTORY cartographer_config
-  DESTINATION share/my_nav2/
+  DESTINATION share/tong_thesis_1/
 )

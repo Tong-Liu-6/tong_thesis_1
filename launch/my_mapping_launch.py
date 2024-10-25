@@ -16,7 +16,7 @@ def generate_launch_description():
     y_pose = LaunchConfiguration('y_pose', default='0.9')
 
     world = os.path.join(
-        get_package_share_directory('my_nav2'),
+        get_package_share_directory('tong_thesis_1'),
         'worlds',
         'new_world.model'
     )
@@ -58,13 +58,13 @@ def generate_launch_description():
         ),
         launch_arguments={
             'use_sim_time': use_sim_time, 
-            'cartographer_config_dir': os.path.join(get_package_share_directory('my_nav2'), 'cartographer_config'),
+            'cartographer_config_dir': os.path.join(get_package_share_directory('tong_thesis_1'), 'cartographer_config'),
             'configuration_basename': 'new_turtlebot3_lds_2d.lua'
         }.items()
     )
 
     bag_play_cmd = ExecuteProcess(
-        cmd=['ros2', 'bag', 'play', os.path.join(get_package_share_directory('my_nav2'), 'bags', 'teleop_bag')],
+        cmd=['ros2', 'bag', 'play', os.path.join(get_package_share_directory('tong_thesis_1'), 'bags', 'teleop_bag')],
         output='screen',
         shell=True
     )
@@ -72,7 +72,7 @@ def generate_launch_description():
     save_map_cmd = ExecuteProcess(
         cmd=[
             'ros2', 'run', 'nav2_map_server', 'map_saver_cli', 
-            '-f', os.path.join(get_package_share_directory('my_nav2'), 'maps', 'new_map')
+            '-f', os.path.join(get_package_share_directory('tong_thesis_1'), 'maps', 'new_map')
         ],
         output='screen',
         shell=True

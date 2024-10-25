@@ -28,7 +28,7 @@ from nav2_common.launch import ReplaceString
 
 def generate_launch_description():
     # Get the launch directory
-    bringup_dir = get_package_share_directory('my_nav2')
+    bringup_dir = get_package_share_directory('tong_thesis_1')
 
     # Create the launch configuration variables
     namespace = LaunchConfiguration('namespace')
