@@ -145,13 +145,13 @@
 
     <!-- box_obstacle_1 -->
     <model name="box_obstacle_1">
-      <pose>1.5 0.6 0.15 0 0 0</pose> 
+      <pose>1.1 0.1 0.15 0 0 0</pose> 
       <static>true</static>
       <link name="link">
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.1 0.3 0.3</size>  
+              <size>0.2 0.2 0.3</size>  
             </box>
           </geometry>
           <material>
@@ -161,7 +161,7 @@
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 0.3 0.3</size>
+              <size>0.2 0.2 0.3</size>
             </box>
           </geometry>
         </collision>
@@ -193,16 +193,17 @@
       </link>
     </model>
 
-    <!-- box_obstacle_3 -->
-    <model name="box_obstacle_3">
-      <pose>1 0.15 0.15 0 0 0</pose> 
-      <static>true</static>
+    <!-- cylinder_obstacle_1 -->
+    <model name="cylinder_obstacle_1">
+      <pose>0.1 0.1 0.15 0 0 0</pose>  
+      <static>true</static>  
       <link name="link">
         <visual name="visual">
           <geometry>
-            <box>
-              <size>0.1 0.3 0.3</size>  
-            </box>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.3</length>
+            </cylinder>
           </geometry>
           <material>
             <ambient>0.2 0.2 0.7 1</ambient>  
@@ -210,17 +211,72 @@
         </visual>
         <collision name="collision">
           <geometry>
-            <box>
-              <size>0.1 0.3 0.3</size>
-            </box>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.3</length>
+            </cylinder>
           </geometry>
         </collision>
       </link>
     </model>
 
-    <!-- cylinder_obstacle_1 -->
-    <model name="cylinder_obstacle_1">
-      <pose>0.5 0.5 0.15 0 0 0</pose>  
+    <!-- cylinder_obstacle_2 -->
+    <model name="cylinder_obstacle_2">
+      <pose>0.1 1.1 0.15 0 0 0</pose>  
+      <static>true</static>  
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.7 1</ambient>  
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- cylinder_obstacle_3 -->
+    <model name="cylinder_obstacle_3">
+      <pose>1.9 0.1 0.15 0 0 0</pose>  
+      <static>true</static>  
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.7 1</ambient>  
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- cylinder_obstacle_4 -->
+    <model name="cylinder_obstacle_4">
+      <pose>1.9 1.1 0.15 0 0 0</pose>  
       <static>true</static>  
       <link name="link">
         <visual name="visual">
@@ -247,7 +303,7 @@
 
     <!-- test_obstacle_1 -->
     <model name="test_obstacle_1">
-      <pose>0.5 1.8 0.15 0 0 0</pose>  
+      <pose>0.5 2.0 0.15 0 0 0</pose>  
       <static>true</static>  
       <link name="link">
         <visual name="visual">
@@ -274,7 +330,61 @@
 
     <!-- test_obstacle_2 -->
     <model name="test_obstacle_2">
-      <pose>1.2 -0.5 0.15 0 0 0</pose>  
+      <pose>1.6 -0.8 0.15 0 0 0</pose>  
+      <static>true</static>  
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>  
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+   <!-- test_obstacle_3 -->
+    <model name="test_obstacle_3">
+      <pose>-0.8 0.5 0.15 0 0 0</pose>  
+      <static>true</static>  
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>  
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>0.3</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+   <!-- test_obstacle_4 -->
+    <model name="test_obstacle_4">
+      <pose>2.7 0.8 0.15 0 0 0</pose>  
       <static>true</static>  
       <link name="link">
         <visual name="visual">

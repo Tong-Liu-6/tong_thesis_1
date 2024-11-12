@@ -63,25 +63,25 @@ def generate_launch_description():
         }.items()
     )
 
-    bag_play_cmd = ExecuteProcess(
-        cmd=['ros2', 'bag', 'play', os.path.join(get_package_share_directory('tong_thesis_1'), 'bags', 'teleop_bag')],
-        output='screen',
-        shell=True
-    )
+    # bag_play_cmd = ExecuteProcess(
+    #     cmd=['ros2', 'bag', 'play', os.path.join(get_package_share_directory('tong_thesis_1'), 'bags', 'teleop_bag')],
+    #     output='screen',
+    #     shell=True
+    # )
 
-    save_map_cmd = ExecuteProcess(
-        cmd=[
-            'ros2', 'run', 'nav2_map_server', 'map_saver_cli', 
-            '-f', os.path.join(get_package_share_directory('tong_thesis_1'), 'maps', 'new_map')
-        ],
-        output='screen',
-        shell=True
-    )
+    # save_map_cmd = ExecuteProcess(
+    #     cmd=[
+    #         'ros2', 'run', 'nav2_map_server', 'map_saver_cli', 
+    #         '-f', os.path.join(get_package_share_directory('tong_thesis_1'), 'maps', 'new_map')
+    #     ],
+    #     output='screen',
+    #     shell=True
+    # )
 
-    wait_timer = TimerAction(
-            period = 123.0, 
-            actions = [save_map_cmd]
-        )
+    # wait_timer = TimerAction(
+    #         period = 165.0, 
+    #         actions = [save_map_cmd]
+    #     )
     
     ld = LaunchDescription()
 
@@ -91,7 +91,7 @@ def generate_launch_description():
     ld.add_action(robot_state_publisher_cmd)
     ld.add_action(spawn_turtlebot_cmd)
     ld.add_action(cartographer_cmd)
-    ld.add_action(bag_play_cmd)  
-    ld.add_action(wait_timer)  
+    # ld.add_action(bag_play_cmd)  
+    # ld.add_action(wait_timer)  
 
     return ld

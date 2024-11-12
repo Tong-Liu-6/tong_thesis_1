@@ -47,8 +47,8 @@ options = {
 MAP_BUILDER.use_trajectory_builder_2d = true
 
 TRAJECTORY_BUILDER_2D.min_range = 0.0
-TRAJECTORY_BUILDER_2D.max_range = 0.5
-TRAJECTORY_BUILDER_2D.missing_data_ray_length = 0.5
+TRAJECTORY_BUILDER_2D.max_range = 0.6
+TRAJECTORY_BUILDER_2D.missing_data_ray_length = 0.6
 TRAJECTORY_BUILDER_2D.use_imu_data = false
 TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = false
 TRAJECTORY_BUILDER_2D.motion_filter.max_angle_radians = math.rad(0.05)
