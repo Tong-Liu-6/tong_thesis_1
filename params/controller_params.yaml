@@ -134,7 +134,7 @@ controller_server:
       
     FollowPath: 
       plugin: "tong_controller/TrackedMPC"
-      trajectory_shape: "o"
+      trajectory_shape: "8"
       radius: 1.5
       period: 50.0
 
