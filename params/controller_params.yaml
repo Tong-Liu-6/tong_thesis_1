@@ -142,13 +142,13 @@ controller_server:
       prediction_horizon: 10
       use_tracking_controller: True
       MPC_frequency: 10.0
-      q: 1.0
-      r: 1.0
-      p_dist: 0.15
+      q: 1.5
+      r: 0.5
+      p_dist: 0.10
       max_infeasible_sol: 5
       w_min: -0.6
       w_max: 0.6
-      acc_lin_max: 0.1
+      acc_lin_max: 1.0
       wheel_radius: 0.33
       track_width: 0.16
       path_sampling_threshold: 0.2
