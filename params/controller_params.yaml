@@ -146,9 +146,10 @@ controller_server:
       p_dist: 0.10
       max_infeasible_sol: 5
       obstacle_threshold: 251
+      obstacle_avoidance_range: 4
       w_min: -0.6
       w_max: 0.6
-      acc_lin_max: 1.0
+      acc_lin_max: 2.0
       wheel_radius: 0.33
       track_width: 0.16
 
