@@ -45,7 +45,7 @@ bt_navigator:
     global_frame: map
     robot_base_frame: base_link
     odom_topic: /odom
-    bt_loop_duration: 10
+    bt_loop_duration: 20 # 
     default_server_timeout: 20
     wait_for_service_timeout: 1000
 
@@ -135,28 +135,44 @@ controller_server:
       stateful: True
       plugin: "nav2_controller::SimpleGoalChecker"
       xy_goal_tolerance: 0.25
-      yaw_goal_tolerance: 0.25
+      yaw_goal_tolerance: 0.2
       
     FollowPath: 
       plugin: "tong_controller/TrackedMPC"
+
+      # parameters of MPC
       prediction_horizon: 10
       MPC_frequency: 10.0
-      q: 3.0
-      r: 0.5
-      p_dist: 0.10
-      max_infeasible_sol: 5
-      obstacle_threshold: 251
-      obstacle_avoidance_range: 4
-      search_step: 0.05
-      virtual_laser_range: 60.0
-      virtual_laser_interval: 20.0
-      w_min: -0.6
-      w_max: 0.6
-      acc_lin_max: 3.0
-      wheel_radius: 0.33
-      track_width: 0.16
-      goal_tolerance: 0.1
-      kp_rot: 1.0
+      p_dist: 0.10 # position of point P
+      q: 3.0 # cost weight of state error
+      r: 0.3 # cost weight of input energy
+      sl_p: 1.0 # cost weight of positon slack variables
+      sl_a: 1.0 # cost weight of acceleration slack variables
+      l_slack: 0.05 # slack distance for linear obstacle constraints
+      acc_slack: 1.0 # slack value for linear acceleration constraints
+
+      # parameters of goal pose control
+      goal_tolerance: 0.1 # when the distance between robot and goal is lower than this value, start goal orientation control
+      kp_rot: 1.0 # proportional gain for goal orientation control
+
+      # parameters of obstacle avoidance
+      obstacle_threshold: 251 # the threshold of cell occupied value (0-255) in local costmap to considered as dangerous region
+      obstacle_avoidance_range: 4 # obstacle detection distance of virtual laser 
+                                  # (reasonable value: maximum movement distance in prediction_horizon devided by local costmap resolution)
+      virtual_laser_range: 60.0 # virtual laser angle range: (-virtual_laser_range) to (+virtual_laser_range)
+      virtual_laser_interval: 20.0 # virtual laser interval angle
+      search_step: 0.05 # step length to search for a free position in reference state modification function
+                        # (reasonable value: local costmap resolution)
+      max_search_iterations: 10 # max iterations to search for a free position in reference state modification function
+      
+      # parameters of robot
+      w_min: -0.6 # min allowable wheel actuator rotational speed
+      w_max: 0.6 # max allowable wheel actuator rotational speed
+      acc_lin_max: 1.0 # max allowable robot linear acceleration
+      wheel_radius: 0.33 # robot wheel radius
+      track_width: 0.16 # length between left and right wheels
+
+
       
       # plugin: "tong_controller/FollowTrajectory"
       # max_vel_linear: 0.2
@@ -350,7 +366,7 @@ behavior_server:
     transform_tolerance: 0.1
     use_sim_time: true
     simulate_ahead_time: 2.0
-    max_rotational_vel: 1.0
+    max_rotational_vel: 2.0
     min_rotational_vel: 0.4
     rotational_acc_lim: 3.2
 
@@ -375,10 +391,10 @@ velocity_smoother:
     smoothing_frequency: 20.0
     scale_velocities: False
     feedback: "OPEN_LOOP"
-    max_velocity: [0.26, 0.0, 1.0]
-    min_velocity: [-0.26, 0.0, -1.0]
-    max_accel: [2.5, 0.0, 3.2]
-    max_decel: [-2.5, 0.0, -3.2]
+    max_velocity: [0.3, 0.0, 2.0]
+    min_velocity: [-0.3, 0.0, -2.0]
+    max_accel: [3.0, 0.0, 3.2]
+    max_decel: [-3.0, 0.0, -3.2]
     odom_topic: "odom"
     odom_duration: 0.1
     deadband_velocity: [0.0, 0.0, 0.0]
