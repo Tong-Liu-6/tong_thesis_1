@@ -18,7 +18,7 @@ def generate_launch_description():
     world = os.path.join(
         get_package_share_directory('tong_thesis_1'),
         'worlds',
-        'controller_world.model'
+        'testing_world.model'
     )
 
     gzserver_cmd = IncludeLaunchDescription(
@@ -57,7 +57,9 @@ def generate_launch_description():
             os.path.join(pkg_cartographer, 'launch', 'cartographer.launch.py')
         ),
         launch_arguments={
-            'use_sim_time': use_sim_time
+            'use_sim_time': use_sim_time, 
+            'cartographer_config_dir': os.path.join(get_package_share_directory('tong_thesis_1'), 'cartographer_config'),
+            'configuration_basename': 'turtlebot3_lds_2d.lua'
         }.items()
     )
     

@@ -49,10 +49,6 @@ install(
   DESTINATION share/tong_thesis_1/
 )
 install(
-  DIRECTORY bags
-  DESTINATION share/tong_thesis_1/
-)
-install(
   DIRECTORY cartographer_config
   DESTINATION share/tong_thesis_1/
 )
